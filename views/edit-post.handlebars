@@ -1,0 +1,23 @@
+<section>
+    <div class="container py-4">
+        <a href="/dashboard"> &larr; Back to dashboard</a>
+        <h3>Edit Post</h3>
+        <form class="edit-post-form">
+            <div class="mb-3">
+                <label for="post-title" class="form-label">Post Title</label>
+                <input type="text" class="form-control" id="post-title" name="post-title" value="{{post.title}}" >
+            </div>
+            <div class="mb-3">
+                <label for="post_text" class="form-label">Post Text</label>
+                <textarea class="form-control" id="post_text" name="post_text" rows="4">{{post.post_text}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-success">Save Post</button>
+            <button type="button" id="delete-post" class="btn btn-danger">Delete Post</button>
+        </form>
+    </div>
+</section>
+
+{{> comments post.comments}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
