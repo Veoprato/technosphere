@@ -12,6 +12,9 @@ module.exports = {
         .split('/')[0]
         .split('?')[0];
     },
+    sort: array => {
+      return (array).reverse();
+    },
     format_plural: (word, amount) => {
       if (amount !== 1) {
         return `${word}s`;
