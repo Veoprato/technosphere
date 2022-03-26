@@ -1,0 +1,18 @@
+<div class="row">
+    {{#each this}}
+    <section class="col-10 py-1">
+      <div class="card p-2 mx-4">
+        <div class="card-subtitle mb-2 text-muted">
+          {{user.username}} on {{format_date created_at}}
+          {{#if userOwned }}
+          <a href="/"> &larr; Edit Comment</a>
+          {{/if}}
+        </div>
+        <p class="card-text fs-5">
+          {{comment_text}}
+          <br>
+        </p>
+      </div>
+    </section>
+    {{/each}}
+</div>
