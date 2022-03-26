@@ -6,9 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Techosphere</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body class="bg-light">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Techosphere</span>
+    </div>
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
+    <div class="navbar-nav">
+      <a class="nav-link active" aria-current="page" href="/">Home</a>
+      {{#if loggedIn}}
+      <a class="nav-link" href="/dashboard">My Dashboard</a>
+      <button id="logout" class="btn btn-outline-danger">Logout</button>
+      {{else}}
+      <a class="nav-link" href="/login">Login</a>
+      {{/if}}
+    </div>
+  </nav>
+
   <div class="container-fluid">
     <div class="row">
       <main>
@@ -18,6 +36,9 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
